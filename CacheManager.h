@@ -7,7 +7,6 @@
 
 #include <unordered_map>
 using  namespace std;
-template <class p, class s>
 
 /**
  * This class is a interface.
@@ -15,13 +14,14 @@ template <class p, class s>
  * map when ever we will see the same string so we already have the solution and used it.
  * @tparam s is a string name "solution". s is the reversed string of p string.
  */
-
+template <class P,class S>
 class CacheManager {
-    unordered_map <p,s> cache;
+    //unordered_map <p,s> cache;
 public:
-    virtual bool isSolutionExist (p input) = 0;
-    virtual string getSolution (p input) = 0;
-    virtual void saveSolution (p input, s output) = 0;
+    //CacheManager();
+    virtual bool isSolutionExist (P problem) = 0;
+    virtual string getSolution (P problem) = 0;
+    virtual void saveSolution (P problem, S solution) = 0;
 };
 
 

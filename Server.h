@@ -12,7 +12,7 @@ namespace server_side {
     class Server {
     public:
         virtual void open(int port, ClientHandler *c) = 0;
-        virtual void stop() = 0;
+        virtual void stop(int client_socket) = 0;
     };
 
 }

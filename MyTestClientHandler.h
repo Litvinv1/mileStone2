@@ -18,8 +18,9 @@ class MyTestClientHandler: public ClientHandler{
     CacheManager<string ,string>* cm;
 public:
     MyTestClientHandler(CacheManager<string,string>* cm1, Solver<string,string>*solver1);
-    virtual ~MyTestClientHandler();
     void handleClient(int clientSocket);
+    int connectAndSend(string message);
+    virtual ~MyTestClientHandler();
 
 };
 

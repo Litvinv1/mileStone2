@@ -7,6 +7,7 @@
 
 #include "Solver.h"
 #include <string>
+#include <vector>
 
 using namespace std;
  /***
@@ -14,7 +15,8 @@ using namespace std;
   */
 class StringReverser : public Solver<string,string> {
 public:
-    string solverProblem(string problem);
+    string solve(string problem);
+    vector<string> parseLine(string buffer);
 };
 
 

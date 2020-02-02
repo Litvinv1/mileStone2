@@ -6,7 +6,6 @@
 #define EX4_MYSERIALSERVER_H
 
 #include "Server.h"
-#include <bits/socket.h>
 #include <sys/socket.h>
 #include <iostream>
 #include <netinet/in.h>

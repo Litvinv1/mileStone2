@@ -1,9 +1,7 @@
 //
 // Created by yuvalshechter on 19/01/2020.
 //
-
 #include "MySerialServer.h"
-
 using namespace std;
 
 //Creating a socket
@@ -28,11 +26,14 @@ void MySerialServer :: open(int port, ClientHandler *c) {
         std::cout<<"Server is now listening ..."<<std::endl;
     }
     //closing the listening socket
-    stop(client_socket);
+
 
     //thread
-    thread thread1([=] {acceptClients(c, client_socket, address); });
-    thread1.join();
+    //thread thread1([=] {acceptClients(c, client_socket, address); });
+    //thread1.join();
+    //stop(client_socket);
+    acceptClients(c, client_socket, address);
+    //return client_socket;
 }
 
 //accepting and waiting for the clients
@@ -46,11 +47,13 @@ void MySerialServer::acceptClients(ClientHandler *c, int client_socket, sockaddr
     client_socket = accept(client_socket, (struct sockaddr*)&address,(socklen_t*)&address);
     if (client_socket == -1) {
         std::cerr<<"Error accepting client"<<std::endl;
-    }else{
+    } else {
         cout<<"Client accepted"<<endl;
         c->handleClient(client_socket);
     }
+    stop(client_socket);
 }
+
 
 //closing the socket
 void MySerialServer::stop(int client_socket){
