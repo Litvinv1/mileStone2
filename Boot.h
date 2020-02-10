@@ -19,11 +19,11 @@ public:
   Main(){};
   ~Main(){};
   void main(int args){
-    MySerialServer mss;
-    FileCacheManager<string, string> cm;
+    MyParallellServer mps;
+    //FileCacheManager<string, string> cm;
     OA sr;
-    MyTestClientHandler *mtch = new MyTestClientHandler(&cm, &sr);
-    mss.open(args, mtch);
+    MyClientHandler *mtch = new MyClientHandler(&sr);
+    mps.open(args, mtch);
   };
 };
 };
