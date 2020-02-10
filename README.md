@@ -6,14 +6,18 @@ This project represents a server that accepts a problem from client and finds th
 implements four search algorithms to return the short possible way from the initial vertex to the goal vertex.
 The four algoritms are:
 1.DFS
+
 2.BFS
+
 3.BestFS
+
 4.A*
 
 The program handles several clients by using parallel server and able to save 
 previous solutions and pull solution for a problem that has already been solved by using cache manager and saving solutions into files.
 
 # Run Insturctions:
+
 1. Open terminal in project directory and type:
 
 sudo g++ -std=c++14 *.cpp -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -o a.out -pthread
